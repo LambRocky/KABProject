@@ -24,7 +24,7 @@ public class LoginController {
         User user = userBiz.user(userName, miMa);
         if (user != null && user.getUserName() != null) {
             session.setAttribute("user", user);
-            return "jsps/frame";
+            return "jsp/frame";
         } else {
             model.addAttribute("error", "用户名或者密码错误");
             return "login";

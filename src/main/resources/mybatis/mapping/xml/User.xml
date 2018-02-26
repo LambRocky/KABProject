@@ -5,11 +5,10 @@
 <mapper namespace="com.accp.dao.UserDao">
 
     <select id="user" resultType="User">
-        select * FROM smbms_user where userCode = #{userCode} and userPassword =#{userPassword}
-
+        select * FROM KAB_user where userName = #{userName} and miMa =#{miMa}
     </select>
 
-    <select id="listAll" resultMap="conditionMap">
+    <!--<select id="listAll" resultMap="conditionMap">
         select * FROM smbms_user,smbms_role where smbms_user.userRole=smbms_role.id
         LIMIT #{pageNo},#{pageSize}
     </select>
@@ -105,5 +104,5 @@
         </set>
         where id=#{id}
 
-    </update>
+    </update>-->
 </mapper>

@@ -14,7 +14,31 @@ public class UserBizImpl implements UserBiz {
     @Resource
     private UserDao userDao;
 
+    public User user(String userName, String miMa) {
+        return userDao.user(new User(userName, miMa));
+    }
+
     public List<User> listAll(String name, int roleid) {
+        return null;
+    }
+
+    public User selectUserById(int id) {
+        return null;
+    }
+
+    public boolean insertUser(User user) {
+        return false;
+    }
+
+    public boolean deleteUser(int id) {
+        return false;
+    }
+
+    public boolean updateUser(User u) {
+        return false;
+    }
+
+   /* public List<User> listAll(String name, int roleid) {
         return userDao.listByCondition(name,roleid);
     }
 
@@ -32,5 +56,5 @@ public class UserBizImpl implements UserBiz {
 
     public boolean updateUser(User u) {
         return userDao.updateUser(u)>0;
-    }
+    }*/
 }

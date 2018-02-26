@@ -4,51 +4,36 @@ import java.util.Date;
 
 public class User {
 
-    private int id;
-    private String userCode;
-    private String userName;
-    private String userPassword;
-    private int gender;
-    private String birthday;
-    private String phone;
-    private String address;
-    private int userRole;
-    private int createdBy;
-    private Date creationDate;
-    private int modifyBy;
-    private Date modifyDate;
-    private Role role;
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
+    private String userName;                 /*用户名*/
+    private String miMa;                     /*密码*/
+    private String realName;                /*真实姓名*/
+    private String school;                  /*所在院校*/
+    private String post;                    /*职务*/
+    private String dept;                    /*所在部门*/
+    private int teachTime;                 /*任教时间*/
+    private String teaachSubject;          /*任教科目*/
+    private Date birthday;                  /*生日*/
+    private String major;                   /*专业*/
+    private String idCard;                  /*身份证号码*/
+    private String education;               /*学历*/
+    private String phone;                   /*手机号*/
+    private String tel;                     /*固定号码*/
+    private int fax;                        /*传真号*/
+    private String email;                   /*邮箱*/
+    private String address;                 /*通讯地址*/
+    private String securityQuestion;       /*密保问题*/
+    private String secretAnswer;            /*密保答案*/
+    private String managementExperience;    /*管理经验*/
+    private int userType;                   /*用户类型*/
+    private int auditStatus;                /*审核状态*/
+    private int userRoot;                    /*用户开班权限*/
 
     public User() {
     }
 
-    public User(String name, String passWord) {
-        this.userCode=name;
-        this.userPassword=passWord;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUserCode() {
-        return userCode;
-    }
-
-    public void setUserCode(String userCode) {
-        this.userCode = userCode;
+    public User(String userName, String miMa) {
+        this.userName = userName;
+        this.miMa = miMa;
     }
 
     public String getUserName() {
@@ -59,28 +44,92 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getMiMa() {
+        return miMa;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setMiMa(String miMa) {
+        this.miMa = miMa;
     }
 
-    public int getGender() {
-        return gender;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setGender(int gender) {
-        this.gender = gender;
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
-    public String getBirthday() {
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
+    }
+
+    public String getDept() {
+        return dept;
+    }
+
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    public int getTeachTime() {
+        return teachTime;
+    }
+
+    public void setTeachTime(int teachTime) {
+        this.teachTime = teachTime;
+    }
+
+    public String getTeaachSubject() {
+        return teaachSubject;
+    }
+
+    public void setTeaachSubject(String teaachSubject) {
+        this.teaachSubject = teaachSubject;
+    }
+
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
     }
 
     public String getPhone() {
@@ -91,6 +140,30 @@ public class User {
         this.phone = phone;
     }
 
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public int getFax() {
+        return fax;
+    }
+
+    public void setFax(int fax) {
+        this.fax = fax;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -99,43 +172,51 @@ public class User {
         this.address = address;
     }
 
-    public int getUserRole() {
-        return userRole;
+    public String getSecurityQuestion() {
+        return securityQuestion;
     }
 
-    public void setUserRole(int userRole) {
-        this.userRole = userRole;
+    public void setSecurityQuestion(String securityQuestion) {
+        this.securityQuestion = securityQuestion;
     }
 
-    public int getCreatedBy() {
-        return createdBy;
+    public String getSecretAnswer() {
+        return secretAnswer;
     }
 
-    public void setCreatedBy(int createdBy) {
-        this.createdBy = createdBy;
+    public void setSecretAnswer(String secretAnswer) {
+        this.secretAnswer = secretAnswer;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public String getManagementExperience() {
+        return managementExperience;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setManagementExperience(String managementExperience) {
+        this.managementExperience = managementExperience;
     }
 
-    public int getModifyBy() {
-        return modifyBy;
+    public int getUserType() {
+        return userType;
     }
 
-    public void setModifyBy(int modifyBy) {
-        this.modifyBy = modifyBy;
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
 
-    public Date getModifyDate() {
-        return modifyDate;
+    public int getAuditStatus() {
+        return auditStatus;
     }
 
-    public void setModifyDate(Date modifyDate) {
-        this.modifyDate = modifyDate;
+    public void setAuditStatus(int auditStatus) {
+        this.auditStatus = auditStatus;
+    }
+
+    public int getUserRoot() {
+        return userRoot;
+    }
+
+    public void setUserRoot(int userRoot) {
+        this.userRoot = userRoot;
     }
 }

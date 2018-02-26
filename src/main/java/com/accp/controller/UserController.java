@@ -25,7 +25,7 @@ import java.util.HashMap;
 @RequestMapping("/sys/user")
 public class UserController {
 
-    @Resource
+   /* @Resource
     private UserBiz userBiz;
 
     @Resource
@@ -100,5 +100,5 @@ public class UserController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

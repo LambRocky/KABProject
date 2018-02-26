@@ -6,6 +6,8 @@ import com.accp.entity.User;
 import java.util.List;
 
 public interface UserBiz {
+    User user(String userName, String miMa);
+
     List<User> listAll(String name, int roleid);
 
     User selectUserById(int id);

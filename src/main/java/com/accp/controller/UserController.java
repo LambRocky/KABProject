@@ -1,25 +1,8 @@
 package com.accp.controller;
 
 
-import com.accp.biz.RoleBiz;
-import com.accp.biz.UserBiz;
-import com.accp.entity.User;
-import com.alibaba.fastjson.JSON;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
 
 @Controller("userController")
 @RequestMapping("/sys/user")

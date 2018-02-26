@@ -56,43 +56,42 @@
                             <li><a><i class="fa fa-fire"></i> 新闻管理<span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/sys/bill/billlist">订单查询</a></li>
-                                    <li><a href="/sys/bill/billadd">订单添加</a></li>
+                                    <li><a href="#">订单查询</a></li>
+                                    <li><a href="#">订单添加</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-paw"></i>宣传管理<span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/sys/provider/providerlist">供应商查询</a></li>
-                                    <li><a href="/sys/provider/provideradd">供应商添加</a></li>
+                                    <li><a href="#">供应商查询</a></li>
+                                    <li><a href="#">供应商添加</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-comment"></i>公告管理<span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/sys/user/userlist">用户查询</a></li>
-                                    <li><a href="/sys/user/useradd">用户添加</a></li>
+                                    <li><a href="#">用户查询</a></li>
+                                    <li><a href="#">用户添加</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-plus"></i>网上开班管理<span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/sys/user/userlist">用户查询</a></li>
-                                    <li><a href="/sys/user/useradd">用户添加</a></li>
+                                    <li><a href="#">用户查询</a></li>
+                                    <li><a href="#">用户添加</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-user"></i>用户管理<span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/sys/user/userlist">用户查询</a></li>
-                                    <li><a href="/sys/user/useradd">用户添加</a></li>
+                                    <li><a href="#">用户查询</a></li>
+                                    <li><a href="#">用户添加</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-cog"></i>系统参数配置<span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="/sys/user/userlist">用户查询</a></li>
-                                    <li><a href="/sys/user/useradd">用户添加</a></li>
+                                    <li><a href="#">新增参数配置</a></li>
                                 </ul>
                             </li>
                         </ul>

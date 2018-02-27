@@ -16,7 +16,7 @@ public class ParameterController {
     @Resource(name = "parameterBiz")
     private ParameterBiz parameterBiz;
 
-    @RequestMapping("/parameterlist.do")
+    @RequestMapping("/parameterlist")
     public String parameterlist(HttpSession session, Model model) {
         model.addAttribute("parameterList",parameterBiz.selectParameter(0));
         return "jsp/parameterlist";

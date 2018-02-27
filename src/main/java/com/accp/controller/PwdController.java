@@ -7,9 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class PwdController {
     @RequestMapping("/pwdmodify")
-    public String toLogin(){
+    public String pwdmodify(){
         return "jsp/pwdmodify";
     }
+
+
+
+    @RequestMapping("/pwdmodifydo")
+    public String pwdmodifydo(){
+
+       return "";
+    }
+
+
 
 
 }

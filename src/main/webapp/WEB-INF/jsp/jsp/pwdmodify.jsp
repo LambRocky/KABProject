@@ -37,7 +37,8 @@
                     </div>
                     <div class="x_content">
                         <br/>
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
+                        method="post" action="${pageContext.request.contextPath }/pwdmodifydo.do">
 
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">请输入旧密码： </label>
@@ -68,7 +69,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <button type="submit" class="btn btn-primary"> 保 存</button>
-                                    <button type="submit" class="btn btn-success"> 取 消</button>
+                                    <button type="button" class="btn btn-success"> 取 消</button>
                                 </div>
                             </div>
 
@@ -80,4 +81,11 @@
     </div>
 </div>
 
+
 <%@include file="/common/foot.jsp" %>
+
+
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+
+</script>

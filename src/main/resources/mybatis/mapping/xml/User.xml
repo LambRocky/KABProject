@@ -5,7 +5,7 @@
 <mapper namespace="com.accp.dao.UserDao">
 
     <select id="user" resultType="User">
-        select * FROM KAB_user where userName = #{userName} and miMa =#{miMa}
+        select * FROM kab_user where userName = #{userName} and miMa =#{miMa}
     </select>
 
     <!--<select id="listAll" resultMap="conditionMap">
@@ -73,36 +73,15 @@
         select * from smbms_user,smbms_role  where smbms_user.userRole=smbms_role.id and  smbms_user.id=#{id}
     </select>
 
-    <update id="updateUser">
-        update smbms_user
-        <set>
-            <if test="userName!=null and userName!=''">
-                userName=#{userName},
-            </if>
-            <if test="gender>0">
-                gender=#{gender},
-            </if>
-            <if test="birthday!=null">
-                birthday=#{birthday},
-            </if>
-            <if test="phone!=null and phone!=''">
-                phone=#{phone},
-            </if>
-            <if test="address!=null and address!=''">
-                address=#{address},
-            </if>
-            <if test="userRole>0">
-                userRole=#{userRole},
-            </if>
-            <if test="modifyBy>0">
-                modifyBy=#{modifyBy},
-            </if>
-            <if test="modifyDate!=null">
-                modifyDate=#{modifyDate},
-            </if>
+   -->
 
+    <update id="updateUser">
+        update kab_user
+        <set>
+            <if test="miMa!=null and miMa!=''">
+                miMa=#{miMa},
+            </if>
         </set>
         where id=#{id}
-
-    </update>-->
+    </update>
 </mapper>

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class User {
 
+    private int id;                         /*用户ID*/
     private String userName;                 /*用户名*/
     private String miMa;                     /*密码*/
     private String realName;                /*真实姓名*/
@@ -34,6 +35,15 @@ public class User {
     public User(String userName, String miMa) {
         this.userName = userName;
         this.miMa = miMa;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUserName() {

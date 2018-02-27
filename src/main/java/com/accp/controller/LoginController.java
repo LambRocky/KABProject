@@ -15,8 +15,6 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
     @Resource(name = "userBiz")
     private UserBiz userBiz;
-    @Resource(name = "roleBiz")
-    private RoleBiz roleBiz;
 
     @RequestMapping("/login")
     public String login(String userName, String miMa, HttpSession session, Model model) {

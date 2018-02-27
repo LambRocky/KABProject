@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.accp.dao.ParameterDao">
+
+    <select id="selectParameter" resultType="Parameter">
+        select * FROM kab_parameter
+        <where>
+            <if test="pTypeId > 0">
+                pTypeId = #{pTypeId}
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteParameter">
+        delete from kab_parameter where pTypeId=#{pTypeId}
+    </delete>
+
+    <insert id="addParameter">
+        insert into kab_parameter (pTypeId , pTypeNo , pTypeName , remark , pId ,	pName)
+        VALUES (#{pTypeId} , #{pTypeNo} , #{pTypeName} , #{remark} , #{pId} ,	#{pName})
+    </insert>
+
+</mapper>

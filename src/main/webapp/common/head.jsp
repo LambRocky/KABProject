@@ -36,12 +36,12 @@
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="${pageContext.request.contextPath }/image/cropper.jpg" alt=" ..."
+                        <img src="${pageContext.request.contextPath }/image/img.jpg" alt=" ..."
                              class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2>${user.userName }</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -91,6 +91,7 @@
                             <li><a><i class="fa fa-cog"></i>系统参数配置<span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
+                                    <li><a href="${pageContext.request.contextPath }/parameterlist.do">参数配置查询</a></li>
                                     <li><a href="#">新增参数配置</a></li>
                                 </ul>
                             </li>
@@ -131,11 +132,12 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="${pageContext.request.contextPath }/image/cropper.jpg" alt="">John Doe
+                                <img src="${pageContext.request.contextPath }/image/cropper.jpg"
+                                     alt="">${user.userName }
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;"> Profile</a></li>
+                                <li><a href="${pageContext.request.contextPath }/pwdmodify.do"> 修改密码</a></li>
                                 <li>
                                     <a href="javascript:;">
                                         <span class="badge bg-red pull-right">50%</span>

@@ -1,97 +1,110 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@include file="/common/head.jsp" %>
 
-<%@include file="/common/head.jsp"%>
-        <div class="right">
-            <div class="location">
-                <strong>你现在所在的位置是:</strong>
-                <span>用户管理页面</span>
+
+<div class="right_col" role="main">
+    <form id="userForm" name="userForm" method="post">
+        <div class="">
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>用户管理 </h3>
+                </div>
             </div>
-            <div class="search">
-           		<form method="get" action="/user/userlistcon">
-					<input name="method" value="query" class="input-text" type="hidden">
-					 <span>用户名：</span>
-					 <input name="queryname" class="input-text"	type="text" value="${queryUserName }">
 
-					 <span>用户角色：</span>
-					 <select name="queryUserRole">
-						<c:if test="${roleList != null }">
-						   <option value="0">--请选择--</option>
-						   <c:forEach var="role" items="${roleList}">
-						   		<option <c:if test="${role.id == queryUserRole }">selected="selected"</c:if>
-						   		value="${role.id}">${role.roleName}</option>
-						   </c:forEach>
-						</c:if>
-	        		</select>
-					 
-					 <input type="hidden" name="pageIndex" value="1"/>
-					 <input	value="查 询" type="submit" id="searchbutton">
-					 <a href="${pageContext.request.contextPath}/user/useradd" >添加用户</a>
-				</form>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Table design
+                                <small>Custom design</small>
+                            </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Settings 1</a>
+                                        </li>
+                                        <li><a href="#">Settings 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="x_content">
+
+
+                            <div class="table-responsive">
+                                <table class="table table-striped jambo_table bulk_action">
+                                    <thead>
+                                    <tr class="headings">
+                                        <th class="column-title">选择</th>
+                                        <th class="column-title">用户名</th>
+                                        <th class="column-title">真实姓名</th>
+                                        <th class="column-title">手机号码</th>
+                                        <th class="column-title">用户类型</th>
+                                        <th class="column-title">审核状态</th>
+                                        <th class="column-title">用户开班权限</th>
+                                        <th class="column-title">操作</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <c:forEach var="user" items="${userList }" varStatus="status">
+                                        <tr class="even pointer">
+                                            <td class="a-center ">
+                                                <input type="radio" data-label="radio" name="u55" checked/>
+                                            </td>
+                                            <td class="">${user.userName }</td>
+                                            <td class="">${user.realName }</td>
+                                            <td class="">${user.tel }</td>
+                                            <td class="">
+                                                <c:if test="${user.userType==1 }">普通会员</c:if>
+                                                <c:if test="${user.userType==2 }">讲师</c:if>
+                                                <c:if test="${user.userType==3 }">普通培训师</c:if>
+                                                <c:if test="${user.userType==4 }">高级培训师</c:if>
+                                            </td>
+                                            <td class="">${user.auditStatus }</td>
+                                            <td class="">
+                                                <c:if test="${user.userRoot==1 }">学生班</c:if>
+                                                <c:if test="${user.userRoot==2}">讲师班</c:if>
+                                                <c:if test="${user.userRoot==3}">培训师班</c:if>
+                                                <c:if test="${user.userRoot==4}">高级培训师班</c:if>
+                                            </td>
+                                            <td>
+                                                <span> <a href="/usermodify/${user.id}" style="color: #fff;"
+                                                            class="btn btn-primary">修改</a> </span>
+                                                <span> <a href="/userdelete/${user.id}" style="color:#fff;"
+                                                          class="btn btn-primary">删除</a> </span>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <!--用户-->
-            <table class="providerTable" cellpadding="0" cellspacing="0">
-                <tr class="firstTr">
-                    <th width="10%">用户编码</th>
-                    <th width="20%">用户名称</th>
-                    <th width="10%">性别</th>
-                    <th width="10%">出生日期</th>
-                    <th width="10%">电话</th>
-                    <th width="10%">用户角色</th>
-                    <th width="30%">操作</th>
-                </tr>
-                   <c:forEach var="user" items="${userList }" varStatus="status">
-					<tr>
-						<td>
-						<span>${user.userCode }</span>
-						</td>
-						<td>
-						<span>${user.userName }</span>
-						</td>
-						<td>
-							<span>
-								<c:if test="${user.gender==1}">男</c:if>
-								<c:if test="${user.gender==2}">女</c:if>
-							</span>
-						</td>
-						<td>
-						<span>${user.birthday}</span>
-						</td>
-						<td>
-						<span>${user.phone}</span>
-						</td>
-						<td>
-							<span>${user.role.roleName}</span>
-						</td>
-						<td>
-						<span><a class="viewUser" href="javascript:;" userid=${user.id } username=${user.userName }><img src="${pageContext.request.contextPath }/images/read.png" alt="查看" title="查看"/></a></span>
-						<span><a class="modifyUser" href="javascript:;" userid=${user.id } username=${user.userName }><img src="${pageContext.request.contextPath }/images/xiugai.png" alt="修改" title="修改"/></a></span>
-						<span><a class="deleteUser" href="javascript:;" userid=${user.id } username=${user.userName }><img src="${pageContext.request.contextPath }/images/schu.png" alt="删除" title="删除"/></a></span>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-			<input type="hidden" id="totalPageCount" value="${totalPageCount}"/>
-		  	<c:import url="rollpage.jsp">
-	          	<c:param name="totalCount" value="${totalCount}"/>
-	          	<c:param name="currentPageNo" value="${currentPageNo}"/>
-	          	<c:param name="totalPageCount" value="${totalPageCount}"/>
-          	</c:import>
         </div>
-    </section>
-
-<!--点击删除按钮后弹出的页面-->
-<div class="zhezhao"></div>
-<div class="remove" id="removeUse">
-    <div class="removerChid">
-        <h2>提示</h2>
-        <div class="removeMain">
-            <p>你确定要删除该用户吗？</p>
-            <a href="#" id="yes">确定</a>
-            <a href="#" id="no">取消</a>
-        </div>
-    </div>
+    </form>
+</div>
 </div>
 
+
 <%@include file="/common/foot.jsp" %>
-<script type="text/javascript" src="${pageContext.request.contextPath }/js/userlist.js"></script>

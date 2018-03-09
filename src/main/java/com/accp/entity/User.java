@@ -1,5 +1,7 @@
 package com.accp.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class User {
@@ -12,10 +14,12 @@ public class User {
     private String post;                    /*职务*/
     private String dept;                    /*所在部门*/
     private int teachTime;                 /*任教时间*/
-    private String teaachSubject;          /*任教科目*/
+    private String teachSubject;          /*任教科目*/
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;                  /*生日*/
     private String major;                   /*专业*/
     private String idCard;                  /*身份证号码*/
+    private String wantClass;               /* 参加班级意向*/
     private String education;               /*学历*/
     private String phone;                   /*手机号*/
     private String tel;                     /*固定号码*/
@@ -36,7 +40,6 @@ public class User {
         this.userName = userName;
         this.miMa = miMa;
     }
-
 
     public int getId() {
         return id;
@@ -102,12 +105,12 @@ public class User {
         this.teachTime = teachTime;
     }
 
-    public String getTeaachSubject() {
-        return teaachSubject;
+    public String getTeachSubject() {
+        return teachSubject;
     }
 
-    public void setTeaachSubject(String teaachSubject) {
-        this.teaachSubject = teaachSubject;
+    public void setTeachSubject(String teachSubject) {
+        this.teachSubject = teachSubject;
     }
 
     public Date getBirthday() {
@@ -132,6 +135,14 @@ public class User {
 
     public void setIdCard(String idCard) {
         this.idCard = idCard;
+    }
+
+    public String getWantClass() {
+        return wantClass;
+    }
+
+    public void setWantClass(String wantClass) {
+        this.wantClass = wantClass;
     }
 
     public String getEducation() {

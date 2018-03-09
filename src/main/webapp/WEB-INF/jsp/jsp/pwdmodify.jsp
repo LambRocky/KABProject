@@ -38,7 +38,7 @@
                     <div class="x_content">
                         <br/>
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
-                        method="post" action="${pageContext.request.contextPath }/pwdmodifydo.do">
+                        method="post" action="${pageContext.request.contextPath }/pwdmodifydo">
 
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">请输入旧密码： </label>

@@ -2,7 +2,7 @@ package com.accp.entity;
 
 public class Class {
     private int id;                           /*班级Id*/
-    private String className;               /*班级名称*/
+    private String className;                /*班级名称*/
     private int classtype;                  /*班级类型Id*/
     private int schoolId;                   /*学校Id*/
 

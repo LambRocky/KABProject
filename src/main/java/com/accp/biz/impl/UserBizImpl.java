@@ -14,47 +14,24 @@ public class UserBizImpl implements UserBiz {
     @Resource
     private UserDao userDao;
 
+    public boolean deleteUser(int id) {
+        return userDao.deleteUser(id)>0;
+    }
+
     public User user(String userName, String miMa) {
-        return userDao.user(new User(userName, miMa));
+        return userDao.user(new User(userName,miMa));
     }
 
-    public List<User> listAll(String name, int roleid) {
-        return null;
+    public List<User> selectUser() {
+        return userDao.selectUser();
     }
 
-    public User selectUserById(int id) {
-        return null;
-    }
-
-    public boolean insertUser(User user) {
-        return false;
-    }
-
-    public boolean deleteUser(int id) {
-        return false;
+    public User userById(User u) {
+        return userDao.userById(u);
     }
 
     public boolean updateUser(User u) {
-        return false;
+        return userDao.updateUser(u) > 0;
     }
 
-   /* public List<User> listAll(String name, int roleid) {
-        return userDao.listByCondition(name,roleid);
-    }
-
-    public User selectUserById(int id) {
-        return userDao.selectUserById(id);
-    }
-
-    public boolean insertUser(User user) {
-        return userDao.insertUse(user)>0;
-    }
-
-    public boolean deleteUser(int id) {
-        return userDao.deleteUse(id)>0;
-    }
-
-    public boolean updateUser(User u) {
-        return userDao.updateUser(u)>0;
-    }*/
 }

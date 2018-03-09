@@ -69,9 +69,9 @@
                                         <td class="a-center ">
                                             <input type="radio" data-label="radio" name="u55" checked/>
                                         </td>
-                                        <td class="">${parameter.pTypeNo}</td>
-                                        <td class="">${parameter.pTypeName}</td>
-                                        <td class="">${parameter.remark}</td>
+                                        <td class=""><input value="${parameter.pTypeNo}"/></td>
+                                        <td class=""><input value="${parameter.pTypeName}"/></td>
+                                        <td class=""><input value="${parameter.remark}"/></td>
                                         <td class=""><input type="checkbox" class="flat" name="table_records"></td>
                                         </td>
                                     </tr>
@@ -107,8 +107,8 @@
                                         <td class="a-center ">
                                             <input type="radio" value="radio" data-label="radio" name="u55" checked/>
                                         </td>
-                                        <td class="">${parameter.pId}</td>
-                                        <td class="">${parameter.pName}</td>
+                                        <td class=""><input value="${parameter.pId}"/></td>
+                                        <td class=""><input value="${parameter.pName}"/></td>
                                         </td>
                                     </tr>
                                 </c:forEach>

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface UserDao {
     User user(User u);
+    User userById(User u);
+    List<User> selectUser();
 
     /* List<User>listAll(@Param("pageNo") int pageNo,
                        @Param("pageSize") int pageSize);
@@ -20,4 +22,5 @@ public interface UserDao {
      int queryUsersRows(@Param("userName") String name, @Param("userRole") int roleid);
  }*/
     int updateUser(User u);
+    int deleteUser(@Param("id") int id);
 }

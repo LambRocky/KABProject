@@ -32,7 +32,7 @@
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
-                <form class="loginForm" action="${pageContext.request.contextPath }/login.do" name="actionForm"
+                <form class="loginForm" action="${pageContext.request.contextPath }/login" name="actionForm"
                       id="actionForm"
                       method="post">
                     <div class="info">${error }</div>

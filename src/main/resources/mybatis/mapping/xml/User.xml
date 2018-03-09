@@ -7,6 +7,13 @@
     <select id="user" resultType="User">
         select * FROM kab_user where userName = #{userName} and miMa =#{miMa}
     </select>
+    <select id="userById" resultType="User">
+        select * FROM kab_user where id =#{id}
+    </select>
+
+    <select id="selectUser" resultType="User">
+        select * FROM kab_user
+    </select>
 
     <!--<select id="listAll" resultMap="conditionMap">
         select * FROM smbms_user,smbms_role where smbms_user.userRole=smbms_role.id
@@ -78,10 +85,70 @@
     <update id="updateUser">
         update kab_user
         <set>
-            <if test="miMa!=null and miMa!=''">
-                miMa=#{miMa},
+            <if test="userName!=null and userName!=''">
+                userName=#{userName},
+        </if>
+            <if test="realName!=null and realName!=''">
+                realName=#{realName},
+            </if>
+            <if test="school!=null and school!=''">
+                school=#{school},
+            </if>
+            <if test="post!=null and post!=''">
+                post=#{post},
+            </if>
+            <if test="dept!=null and dept!=''">
+                dept=#{dept},
+            </if>
+            <if test="teachTime>0">
+                teachTime=#{teachTime},
+            </if>
+            <if test="teachSubject!=null and teachSubject!=''">
+                teachSubject=#{teachSubject},
+            </if>
+            <if test="birthday!=null">
+                birthday=#{birthday},
+            </if>
+            <if test="education!=null and education!=''">
+                education=#{education},
+            </if>
+            <if test="major!=null and major!=''">
+                major=#{major},
+            </if>
+            <if test="idCard!=null and idCard!=''">
+                idCard=#{idCard},
+            </if>
+            <if test="wantClass!=null and wantClass!=''">
+                wantClass=#{wantClass},
+            </if>
+            <if test="fax>0">
+                fax=#{fax},
+            </if>
+            <if test="phone!=null and phone!=''">
+                phone=#{phone},
+            </if>
+            <if test="tel!=null and tel!=''">
+                tel=#{tel},
+            </if>
+            <if test="email!=null and email!=''">
+                email=#{email},
+            </if>
+            <if test="address!=null and address!=''">
+                address=#{address},
+            </if>
+            <if test="securityQuestion!=null and securityQuestion!=''">
+                securityQuestion=#{securityQuestion},
+            </if>
+            <if test="secretAnswer!=null and secretAnswer!=''">
+                secretAnswer=#{secretAnswer},
+            </if>
+            <if test="managementExperience!=null and managementExperience!=''">
+                managementExperience=#{managementExperience},
             </if>
         </set>
         where id=#{id}
     </update>
+    <delete id="deleteUser">
+        delete from kab_user where id=#{id}
+    </delete>
 </mapper>
